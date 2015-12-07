@@ -1,51 +1,77 @@
 import logging
+
 logger = logging.getLogger("web2py.app.libello")
 logger.setLevel(logging.DEBUG)
 
-from gluon import utils as gluon_utils
-import re
+import isbnlib
+import json
 
 
-# def reset_table():
-#     """
-#     This is for testing purposes only
-#     """
-#     db.boards.drop()
-#     db.posts.drop()
-#
+
+def reset_table():
+    """
+    This is for testing purposes only
+    """
+    db.books.drop()
+
+
+def info_isbn():
+    isbn = request.vars.isbn
+    data = isbnlib.meta(isbn, service='merge')
+    cover = isbnlib.cover(isbn)
+    desc = isbnlib.desc(isbn)
+    return response.json(dict(cover=cover, meta=data, desc=desc))
+
+
+def load_books():
+    rows = db(db.books.id >= 0).select()
+    d = {r.id: {'title': r.title, 'authors': r.authors, 'year': r.year_pub, 'isbn': r.isbn,
+                'pub': r.publisher, 'price': r.price, 'cond': r.cond, 'cover': r.cover,
+                'desc': r.descript, 'user_id': r.user_id}
+         for r in rows}
+    return dict(books=d)
+
+
+def info_search():
+    search = str(request.vars.search)
+    json_result = isbnlib.goom(search)
+    data = json.dumps(json_result)
+    search_return = []
+    for book in json_result:
+        temp = dict(book)
+        temp['cover'] = isbnlib.cover(book['ISBN-13'])
+        temp['desc'] = isbnlib.desc(book['ISBN-13'])
+        temp['isbn'] = temp.pop('ISBN-13') #intercept and rename isbn to valid ractive
+        #could include more information in search here
+        search_return.append(temp)
+    return response.json(search_return)
+
+
 def verify_isbn():
     isbn = request.vars.isbn.strip()
-    if len(isbn) == 13:
-        return verify_isbn10(isbn)
-    elif len(isbn) == 17:
-        return verify_isbn13(isbn)
-    else:
-        return False
+    return isbnlib.is_isbn10(isbn) or isbnlib.is_isbn13(isbn)
 
-
-def verify_isbn10(isbn):
-    isbn = isbn.replace("-", "").replace(" ", "").upper();
-    match = re.search(r'^(\d{9})(\d|X)$', isbn)
-    if not match:
-        return False
-    digits = match.group(1)
-    check_digit = 10 if match.group(2) == 'X' else int(match.group(2))
-    result = sum((i + 1) * int(digit) for i, digit in enumerate(digits))
-    return (result % 11) == check_digit
-
-def verify_isbn13(isbn):
-    isbn = isbn.replace("-", "").replace(" ", "").upper();
-    match = re.search(r'^(\d{12})(\d|X)$', isbn)
-    if not match:
-        return False
-    digits = match.group(1)
-    check_digit = 13 if match.group(2) == 'X' else int(match.group(2))
-    result = sum((i + 1) * int(digit) for i, digit in enumerate(digits))
-    return (result % 14) == check_digit
 
 def index():
-    board_id = gluon_utils.web2py_uuid()
-    return dict(board_id=board_id)
+    return load_books()
+
+
+def book_add():
+    title = request.vars['meta[Title]']
+    authors = request.vars['meta[Authors][]']
+    year = request.vars['meta[Year]']
+    isbn = request.vars['meta[ISBN-13]']
+    pub = request.vars['meta[Publisher]']
+    price = request.vars['price']
+    cond = request.vars['cond']
+    cover = ''.join(request.vars['cover[]'])
+    desc = request.vars['desc']
+    db.books.insert(title=title, authors=authors,year_pub=year, isbn=isbn, publisher=pub,
+                    price=price, cond=cond, cover=cover, descript=desc, user_id=auth.user_id)
+    return
+
+
+
 #
 # def load_boards():
 #     """Loads all boards for the user."""

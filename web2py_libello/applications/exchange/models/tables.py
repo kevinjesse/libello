@@ -14,16 +14,16 @@
 ## >>> rows=db(db.mytable.myfield=='value').select(db.mytable.ALL)
 ## >>> for row in rows: print row.id, row.myfield
 #########################################################################
-db.define_table('boards',
-                Field('board_name', 'text'),
-                Field('board_id'),
-                Field('author', db.auth_user, default=auth.user_id),
+db.define_table('books',
+                Field('title', 'text'),
+                Field('authors', 'list:string'),
+                Field('year_pub', 'text'),
+                Field('isbn', 'text'),
+                Field('publisher', 'text'),
+                Field('price', 'text'),
+                Field('cond', 'integer'),
+                Field('cover', 'text'),
+                Field('descript', 'text'),
+                Field('user_id', db.auth_user, default=auth.user_id),
 )
 
-db.define_table('posts',
-                Field('post_name', 'text'),
-                Field('post_content', 'text'),
-                Field('board_id'),
-                Field('post_id'),
-                Field('author', db.auth_user, default=auth.user_id)
-)

@@ -11,47 +11,183 @@
         {{=A('Sign In', _class='btn btn-success', _href=URL('default', 'user', args=['login']))}}
     {{else:}}
         <button class="btn btn-primary" data-toggle="modal" data-target="#insertForm"><i class="fa fa-plus"></i> Add Book</button>
-        {{=A('Sign In', _class='btn btn-danger', _href=URL('default', 'user', args=['logout']))}}
+        {{=A('Sign Out', _class='btn btn-danger', _href=URL('default', 'user', args=['logout']))}}
     {{pass}}
     </p>
 </div>
-
 
   <div class="modal fade" id="insertForm" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button id="close" type="button" class="close" on-click="reset-all" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Sell Book On Libello</h4>
+          <h6 class="modal-title">Enter Title and Author or ISBN</h6>
         </div>
         <div class="modal-body">
             <div class="container">
                   <form role="form">
-                    <div class="form-group col-xs-3">
-                      <label for="title">Title:</label>
-                      <input type="text" class="form-control" id="title" placeholder="Book Title">
+                     <div id="search" class="form-group has-feedback col-xs-4" >
+                        <label class="control-label" for="inputSuccess2">Search</label>
+                        <input type="text" on-click="reset-fields" class="form-control" id="inputSuccess2"
+                        value="{%search%}" placeholder="Title and or author" aria-describedby="inputSuccess2Status">
+                        <span id="inputSuccess2Status" class="sr-only">(success)</span>
                     </div>
-                    <div class="form-group col-xs-3">
-                      <label for="Author">Author:</label>
-                      <input type="text" class="form-control" id="author" placeholder="Author">
+                    <div id="isbn" class="form-group has-feedback col-xs-2" >
+                        <label class="control-label" for="inputSuccess2">ISBN</label>
+                        <input type="text" on-click="reset-fields" class="form-control" id="inputSuccess2"
+                        value="{%isbn%}" placeholder="ISBN" aria-describedby="inputSuccess2Status">
+                        <span id="inputSuccess2Status" class="sr-only">(success)</span>
                     </div>
-                    <div class="form-group col-xs-3">
-                      <label for="isbn">ISBN:</label>
-                      <input type="text" class="form-control" value="{%isbn%}"
-                       id="isbn" placeholder="ISBN">
-                    </div>
+                    {% #if search_done%}
+                        <div class="form-group" >
+                        <label class="control-label" for="inputSuccess2">Search Again?</label>
+                        <button type="submit" class="btn btn-default" on-click="lookup">Perform Lookup</button>
+                         </div>
+
+                    {% /if %}
                   </form>
-        </div>
+            </div>
+            {% #if search_done %}
+                {% #if isbn_search %}
+                    <div id="wrapper">
+                        <img src="{% book_cover %}" class="img-thumbnail" >
+                            <dl class="dl-horizontal">
+                              <dt>Title:</dt>
+                              <dd>{% book_meta['Title'] %}</dd>
+                              <dt>Authors:</dt>
+                              <dd>{% book_meta['Authors'].join(", ").toString() %}</dd>
+                              <dt>Year:</dt>
+                              <dd>{% book_meta['Year'] %}</dd>
+                              <dt>ISBN:</dt>
+                              <dd>{% book_meta['ISBN-13'] %}</dd>
+                              <dt>Publisher:</dt>
+                              <dd>{% book_meta['Publisher'] %}</dd>
+                            </dl>
+                            <dt>Description:</dt>
+                             {% book_desc %}
+                    </div>
+                {% /if %}
+                {% #if title_search %}
+                    {% #search_results: book %}
+                        <hr>
+                        <div id="wrapper">
+                            <img src="{% cover %}" class="img-thumbnail" >
+                            <dl class="dl-horizontal">
+                              <dt>Title:</dt>
+                              <dd>{%Title%}</dd>
+                              <dt>Authors:</dt>
+                              <dd>{% Authors.join(", ").toString() %}</dd>
+                              <dt>Year:</dt>
+                              <dd>{% Year %}</dd>
+                              <dt>ISBN:</dt>
+                              <dd>{%isbn%}</dd>
+                              <dt>Publisher:</dt>
+                              <dd>{%Publisher%}</dd>
+                            </dl>
+                        </div>
+                        <button class="btn btn-primary" on-click="owner-search" data-title="{%Title%}"
+                            data-authors="{%Authors%}" data-year="{%Year%}" data-isbn="{%isbn%}" data-pub="{%Publisher%}"
+                            data-cover="{%cover%}" data-desc="{%desc%}"><i class="fa fa-book"></i> This is my book</button>
+                    {% /search_results%}
+                {% /if %}
+            {% /if %}
+            {% #if book_owner %}
+                 <div id="wrapper">
+                    <img src="{% book_cover %}" class="img-thumbnail" >
+                    <dl class="dl-horizontal">
+                      <dt>Title:</dt>
+                      <dd>{% book_meta['Title'] %}</dd>
+                      <dt>Authors:</dt>
+                      <dd>{% book_meta['Authors'] %}</dd>
+                      <dt>ISBN:</dt>
+                      <dd>{% book_meta['ISBN-13'] %}</dd>
+                    </dl>
+                </div>
+                <div class="form-row">
+                    <label for="price">How much do you want for it?</label>
+                    <div id="price" class="input-group col-xs-3 has-feedback">
+                      <span class="input-group-addon">$</span>
+                      <input type="number" on-click="reset-fields" value="{%book_price%}" step="1.0" class="form-control currency"
+                      placeholder="0.00" on-blur="validate-price"/>
+                    </div>
+                </div><br>
+
+                <div class="form-row">
+                    <label for="cond">What is the condition of this book?</label>
+                    <div id="cond" class="btn-group" role="group" has-feedback aria-label="...">
+                      <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="4">Like New</button>
+                      <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="3">Very Good</button>
+                      <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="2">Good</button>
+                      <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="1">Acceptable</button>
+                    </div>
+                </div><br>
+            {% /if %}
+          </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-default" on-click="lookup" >Perform Lookup</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          {% #if looking %} <i class="fa fa-cog fa-spin fa-2x">  </i> {% /if %}
+          {% #if search_done && isbn_search %}
+            <button class="btn btn-primary" on-click="owner-info"><i class="fa fa-book"></i> This is my book</button>
+          {% /if %}
+          {% #if book_owner %}
+            <button id="post_book" type="submit" class="btn btn-success" on-click="owner-submit" data-dismiss="modal" disabled>
+            <i class="fa fa-book"></i> Post My Book!</button>
+          {% /if %}
+          <button type="submit" class="btn btn-default" on-click="lookup">Perform Lookup</button>
+          <button id= "cancel" type="button" class="btn btn-default" on-click="reset-all" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+<div class="wrapper">
+	<div class="container">
+        <div id="three-columns" class="grid-container" style="display:block;">
+            <ul class="rig columns-3">
+
+                {% #books: book %}
+                    <li>
+                        {% cover %}
+
+                    </li>
+		        {% /books %}
+            </ul>
+        </div>
+	</div>
+</div>
+
+
 </script>
 
 
+<div class="wrapper">
+	<div class="container">
+        <div id="three-columns" class="grid-container" style="display:block;">
+            <ul class="rig columns-4">
+                {{for key, value in books.items():}}
+                    <li>
+                        <img src="{{=value['cover']}}">
+
+
+
+
+
+
+
+
+
+
+                        <h3>{{=value['title']}}</h3>
+                        <p>{{=", ".join(value['authors'])}}</p>
+                    </li>
+		        {{pass}}
+            </ul>
+        </div>
+	</div>
+</div>
 
 
 <script>
@@ -63,56 +199,249 @@
             delimiters: ['{%', '%}'],
             tripleDelimiters: ['{%%', '%%}'],
             data: {
-                book_list: [],
-                author:"",
-                title:"",
-                isbn: ""
+                books: "{{=books}}",
+                search_results: [],
+                search: "",
+                isbn: "",
+                looking: false,
+                book_owner:false,
+                search_done: false,
+                title_search: false,
+                isbn_search:false,
+                book_cover: "",
+                display_cover:"",
+                book_desc:"",
+                book_meta: {},
+                book_price: "",
+                valid_price: false,
+                book_cond: 0,
+                valid_cond: false,
+                can_post: false
             }
         });
 
-            // We want to create a new board
-        MAIN.on("lookup", function () {
-
-            var isbn = MAIN.get('isbn');
-            // if ISBN provided do lookup,
-            if (isbn != '') {
-                // check if isbn good or fail
-                var valid = verify_isbn(isbn);
-
-                // good, do google search by isbn
-                // fail do google loookup by author +title
-            }else {
-                //do google author lookup
-            }
-
-            MAIN.set('isbn', '');
-            MAIN.set('author', '');
-            MAIN.set('title', '');
-        });
-
-        // Ajax to send edit content to database
-        function verify_isbn(isbn) {
-            $.ajax("{{=URL('default', 'verify_isbn', user_signature=True)}}",
+        function load_books() {
+            $.ajax("{{=URL('default', 'load_books', user_signature=True)}}",
                     {
-                        async:false,
-                        data: {
-                            isbn:isbn
-                        },
                         method: 'POST',
-                        success: function (bool) {
-                            alert(bool);
-                            return bool
-                        },
-                        error: function () {
+                        success: function (data) {
+                            MAIN.set('books', data['books']);
                         }
                     }
             );
         }
 
+        // We want to create a new board
+        MAIN.on("lookup", function () {
+            reset_meta(); //reset meta data
+            var isbn = MAIN.get('isbn');
+            var search = MAIN.get('search');
+            // if ISBN provided do lookup,
+            if (isbn != '') {
+                MAIN.set('looking', true);
+                MAIN.set('isbn_search', true);
+            } else if (search != '') {
+                MAIN.set('looking', true);
+                load_search(search);
+                MAIN.set('title_search', true);
+            } else {
+                $("#isbn").addClass("has-error");
+                $("#search").addClass("has-error");
+            }
+        });
 
+                // We want to create a new board
+        MAIN.on("owner-info", function () {
+            MAIN.set('search_done', false);
+            MAIN.set('isbn_search', false);
+            MAIN.set('book_owner', true);
+        });
+
+        MAIN.on("owner-search", function (e) {
+            MAIN.set('search_done', false);
+            MAIN.set('title_search', false);
+            MAIN.set('book_owner', true);
+            MAIN.set('book_meta', {'Title': $(e.node).data("title"), 'Year': $(e.node).data("year"),
+            'Authors': $(e.node).data("authors"), 'ISBN-13': $(e.node).data("isbn"), 'Publisher': $(e.node).data("pub")});
+            MAIN.set('book_cover', [$(e.node).data("cover")]);
+            MAIN.set('book_desc', $(e.node).data("desc"));
+        });
+
+
+        MAIN.on("owner-submit", function () {
+            var meta = MAIN.get('book_meta');
+            var price = MAIN.get('book_price');
+            var cond = MAIN.get('book_cond');
+            var cover = MAIN.get('book_cover');
+            var desc = MAIN.get('book_desc');
+            book_add(meta, price, cond, cover, desc);
+        });
+
+        MAIN.on("validate-price", function () {
+            if (MAIN.get('book_price') > '0') {
+                MAIN.set('valid_price', true);
+                $("#price").addClass("has-success");
+                valid_submit()
+            }else {
+                MAIN.set('valid_price', false);
+                $("#price").addClass("has-error");
+            }
+        });
+
+        MAIN.on("validate-cond", function (e) {
+            var cond = $(e.node).data("cond");
+            if (cond > 0) {
+                MAIN.set('valid_cond', true);
+                MAIN.set('book_cond', cond);
+                valid_submit()
+            }else {
+                MAIN.set('valid_cond', false);
+            }
+        });
+
+        function valid_submit() {
+            if (MAIN.get('valid_price') && MAIN.get('valid_cond')) {
+                $("#post_book").prop('disabled', false);
+            }else{
+                $("#post_book").prop('disabled', true);
+            }
+        }
+
+        MAIN.on("reset-meta", function () {
+            reset_meta();
+        });
+
+        MAIN.on("reset-fields", function () {
+            reset_fields();
+        });
+
+        MAIN.on("reset-all", function () {
+            reset_fields();
+            reset_meta();
+        });
+
+        function reset_fields() {
+            if ($("#isbn").hasClass("has-success")) {
+                $("#isbn").removeClass("has-success");
+            } else if ($("#isbn").hasClass("has-error")) {
+                $("#isbn").removeClass("has-error");
+            }
+            if ($("#search").hasClass("has-success")) {
+                $("#search").removeClass("has-success");
+            } else if ($("#search").hasClass("has-error")) {
+                $("#search").removeClass("has-error");
+            }
+            if ($("#price").hasClass("has-success")) {
+                $("#price").removeClass("has-success");
+            } else if ($("#price").hasClass("has-error")) {
+                $("#price").removeClass("has-error");
+            }
+            if ($("#cond").hasClass("has-success")) {
+                $("#cond").removeClass("has-success");
+            } else if ($("#cond").hasClass("has-error")) {
+                $("#cond").removeClass("has-error");
+            }
+            
+            MAIN.set('isbn', '');
+            MAIN.set('search', '');
+
+        }
+
+        function reset_meta() {
+            MAIN.set('search_done', false);
+            MAIN.set('isbn_search', false);
+            MAIN.set('title_search, false');
+            MAIN.set('book_owner', false);
+            MAIN.set('valid_price', false);
+            MAIN.set('valid_cond', false);
+            MAIN.set('book_desc', '');
+            MAIN.set('book_cover', "");
+            MAIN.set('book_meta', {});
+            MAIN.set('book_price', "");
+            MAIN.set('book_cond', 0);
+            MAIN.set('title_search', false);
+            MAIN.set('search_results', []);
+        }
+
+        function load_isbn(isbn) {
+            $.ajax({
+                url: "{{=URL('default', 'info_isbn', user_signature=True)}}",
+                data: {
+                    isbn: isbn
+                },
+                type: 'POST',
+                success: function (data) {
+                    MAIN.set('book_cover', data['cover']);
+                    MAIN.set('book_desc', data['desc']);
+                    MAIN.set('book_meta', data['meta']);
+                    MAIN.set('search_done', true);
+                    MAIN.set('looking', false);
+                }
+            });
+        }
+
+        function book_add(meta, price, cond, cover, desc) {
+            $.ajax({
+                url: "{{=URL('default', 'book_add', user_signature=True)}}",
+                data: {
+                    meta: meta,
+                    price:price,
+                    cond:cond,
+                    cover:cover,
+                    desc:desc
+                },
+                type: 'POST',
+                success: function (data) {
+                    load_books()
+//                    $("#search").addClass("has-success");
+//                    MAIN.set('book_cover', data['cover']);
+//                    MAIN.set('book_meta', data['meta']);
+//                    MAIN.set('search_done', true);
+//                    MAIN.set('looking', false);
+                }
+            });
+        }
+
+
+        function load_search(search) {
+            $.ajax({
+                url: "{{=URL('default', 'info_search', user_signature=True)}}",
+                data: {
+                    search: search
+                },
+                type: 'POST',
+                success: function (data) {
+                    $("#search").addClass("has-success");
+                     MAIN.set('search_results', data);
+
+//                    MAIN.set('book_cover', data['cover']);
+//                    MAIN.set('book_meta', data['meta']);
+                    MAIN.set('search_done', true);
+                    MAIN.set('looking', false);
+                }
+            });
+        }
+
+        function verify_isbn(isbn) {
+            $.ajax({
+                url: "{{=URL('default', 'verify_isbn', user_signature=True)}}",
+                data: {
+                    isbn: isbn
+                },
+                type: 'POST',
+                success: function (data) {
+                    //MAIN.set("looking", false);
+                    if (data == 'True') {
+                        $("#isbn").addClass("has-success");
+                        load_isbn(isbn);
+                    } else {
+                        $("#isbn").addClass("has-error");
+                        MAIN.set('looking', false);
+                    }
+                }
+            });
+        }
     });
-
-
 
 
 </script>

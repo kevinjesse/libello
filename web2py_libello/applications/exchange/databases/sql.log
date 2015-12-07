@@ -93,3 +93,81 @@ CREATE TABLE posts(
     author INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
 );
 success!
+timestamp: 2015-12-03T01:53:49.600991
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    isbn TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2015-12-03T01:59:27.011404
+ALTER TABLE books ADD publisher TEXT;
+timestamp: 2015-12-03T01:59:27.016884
+ALTER TABLE books ADD price TEXT;
+timestamp: 2015-12-03T01:59:27.020072
+ALTER TABLE books ADD year_pub TEXT;
+timestamp: 2015-12-03T01:59:27.023132
+ALTER TABLE books ADD cond INTEGER;
+timestamp: 2015-12-03T01:59:27.026287
+ALTER TABLE books ADD authors TEXT;
+success!
+timestamp: 2015-12-03T10:26:04.727110
+ALTER TABLE books ADD cover TEXT;
+success!
+timestamp: 2015-12-03T21:06:19.257328
+ALTER TABLE books ADD descript TEXT;
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-03T21:06:56.954543
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-03T21:21:22.475549
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+success!
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-03T23:55:08.231110
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
