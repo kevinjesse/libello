@@ -4,19 +4,19 @@
 
 <script id="libello" type="text/ractive">
 <div class="jumbotron trans">
-    <h1 align="center"><img src="http://i.imgur.com/kV7GqPP.gif"> Libello</h1>
+    <h1 align="center"><img src="http://i.imgur.com/UvwsbZI.png"> Libello</h1>
     <p align="center">
     {{if auth.user_id is None:}}
         {{=A('Sign Up', _class='btn btn-primary', _href=URL('default', 'user', args=['register']))}}
         {{=A('Sign In', _class='btn btn-success', _href=URL('default', 'user', args=['login']))}}
     {{else:}}
-        <button class="btn btn-primary" data-toggle="modal" data-target="#insertForm"><i class="fa fa-plus"></i> Add Book</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addBook"><i class="fa fa-plus"></i> Add Book</button>
         {{=A('Sign Out', _class='btn btn-danger', _href=URL('default', 'user', args=['logout']))}}
     {{pass}}
     </p>
 </div>
 
-  <div class="modal fade" id="insertForm" role="dialog">
+  <div class="modal fade" id="addBook" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -141,53 +141,132 @@
   </div>
 
 
-
-
 <div class="wrapper">
 	<div class="container">
         <div id="three-columns" class="grid-container" style="display:block;">
-            <ul class="rig columns-3">
-
+            <ul class="rig columns-4">
                 {% #books: book %}
                     <li>
-                        {% cover %}
-
+                        <img data-toggle="modal" on-click="buy_edit" data-toggle="modal" data-target="#viewBook" data-title="{%title%}"
+                            data-authors="{%authors%}" data-year="{%year_pub%}" data-isbn="{%isbn%}" data-pub="{%publisher%}"
+                            data-cover="{%cover%}" data-desc="{%desc%}" src="{% cover %}" class="img-thumbnail" >
+                        <h5>{%title%} ({% year_pub %})</h5>
+                        <h6>{% authors.join(", ").toString() %}<br>ISBN: {% isbn %}</h6>
+                           <button class="btn btn-success" on-click="buy_edit" data-toggle="modal" data-target="#viewBook" data-title="{%title%}"
+                            data-authors="{%authors%}" data-year="{%year_pub%}" data-isbn="{%isbn%}" data-pub="{%publisher%}"
+                            data-cover="{%cover%}" data-desc="{%desc%}"><i class="fa fa-book"></i>
+                            View Sellers! </button>
                     </li>
-		        {% /books %}
+		        {% /books%}
             </ul>
         </div>
 	</div>
 </div>
+
+ <div class="modal fade" id="viewBook" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button id="close" type="button" class="close" on-click="reset-all" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">View Book On Libello</h4>
+            <h6 class="modal-title">{% book_meta['Title'] %}</h6>
+        </div>
+        <div class="modal-body">
+            {% #if buy_sell %}
+                 <div id="wrapper">
+                    <img src="{% book_cover %}" class="img-thumbnail" >
+                    <dl class="dl-horizontal">
+                      <dt>Title:</dt>
+                      <dd>{% book_meta['Title'] %}</dd>
+                      <dt>Authors:</dt>
+                      <dd>{% book_meta['Authors'] %}</dd>
+                      <dt>ISBN:</dt>
+                      <dd>{% book_meta['ISBN-13'] %}</dd>
+                    </dl>
+                </div>
+                {%#books:book%}
+                    {% #if isbn == book_meta['ISBN-13']%}
+                    {%#sellers:sell%}
+                        <hr>
+                        {% #if user_id != user %}
+                        <form>
+                            <div class="form-group col-xs-2">
+                                Price
+                                <input type="text" value="$ {%price%}" class="form-control currency" readonly="readonly" />
+                            </div>
+                            <div class="form-group col-xs-3">
+                                Condition
+                                {% #if cond == 4 %}
+                                    <input type="text" value="Like New" class="form-control currency" readonly="readonly" />
+                                {% else %}
+                                    {% #if cond == 3 %}
+                                        <input type="text" value="Very Good" class="form-control currency" readonly="readonly" />
+                                    {% else %}
+                                        {% #if cond == 2 %}
+                                            <input type="text" value="Good" class="form-control currency" readonly="readonly" />
+                                        {% else %}
+                                            <input type="text" value="Acceptable" class="form-control currency" readonly="readonly" />
+                                        {%/if%}
+                                    {%/if%}
+                                {%/if%}
+                            </div>
+                            <br>
+                            {% #if user > 0 %}
+                                <div class="form-group col-xs-3">
+                                    <button id="contact_seller" type="contact" class="btn btn-success" on-click="contact-seller"
+                                    data-isbn="{%isbn%}" data-price="{%price%}" data-cond="{%cond%}" data-user_id="{%user_id%}" data-dismiss="modal">
+                                    <i class="fa fa-envelope-o"></i> Contact Seller!</button>
+                                </div>
+                            {% else %}
+                                <div class="form-group col-xs-3">
+                                    <button id="contact_seller" type="contact" class="btn btn-success" data-dismiss="modal" disabled>
+                                    <i class="fa fa-envelope-o"></i> Contact Seller!</button>
+                                </div>
+                            {%/if%}
+                        </form>
+
+                        {% else %}
+                           <div class="form-row">
+                                <label for="price">How much do you want for it?</label>
+                                <div id="price" class="input-group col-xs-3 has-feedback">
+                                  <span class="input-group-addon">$</span>
+                                  <input type="number" on-click="reset-fields" value="{%price%}" step="1.0" class="form-control currency"
+                                  placeholder="{%price%}" on-blur="validate-price" data-price="{%price%}"/>
+                                </div>
+                            </div><br>
+
+                            <div class="form-row">
+                                <label for="cond">What is the condition of this book?</label>
+                                <div id="cond" class="btn-group" role="group" has-feedback aria-label="...">
+                                  <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="4">Like New</button>
+                                  <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="3">Very Good</button>
+                                  <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="2">Good</button>
+                                  <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="1">Acceptable</button>
+                                </div>
+                            </div><br>
+                            <button id="post_book" type="submit" class="btn btn-success" on-click="owner-submit" data-dismiss="modal" disabled>
+                            <i class="fa fa-book"></i> Repost Book!</button>
+                            <button id="delete_book" type="delete" class="btn btn-danger" on-click="owner-delete" data-id="{%id%}" data-dismiss="modal">
+                            <i class="fa fa-trash-o"></i> Delete Book!</button>
+                        {%/if%}
+                    {%/sellers%}
+                    {%/if%}
+                {%/books%}
+            {% /if %}
+        </div>
+        <br><br><br>
+        <div class="modal-footer">
+          <button id= "cancel" type="button" class="btn btn-default" on-click="reset-all" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 </script>
 
 
-<div class="wrapper">
-	<div class="container">
-        <div id="three-columns" class="grid-container" style="display:block;">
-            <ul class="rig columns-4">
-                {{for key, value in books.items():}}
-                    <li>
-                        <img src="{{=value['cover']}}">
-
-
-
-
-
-
-
-
-
-
-                        <h3>{{=value['title']}}</h3>
-                        <p>{{=", ".join(value['authors'])}}</p>
-                    </li>
-		        {{pass}}
-            </ul>
-        </div>
-	</div>
-</div>
 
 
 <script>
@@ -199,7 +278,7 @@
             delimiters: ['{%', '%}'],
             tripleDelimiters: ['{%%', '%%}'],
             data: {
-                books: "{{=books}}",
+                books: [],
                 search_results: [],
                 search: "",
                 isbn: "",
@@ -208,15 +287,20 @@
                 search_done: false,
                 title_search: false,
                 isbn_search:false,
-                book_cover: "",
+                book_cover: [],
                 display_cover:"",
                 book_desc:"",
                 book_meta: {},
                 book_price: "",
                 valid_price: false,
-                book_cond: 0,
+                book_cond: "",
                 valid_cond: false,
-                can_post: false
+                can_post: false,
+                buyer: false,
+                seller:false,
+                user:"{{=user_id}}",
+                sellers:[],
+                buy_sell: false
             }
         });
 
@@ -225,11 +309,19 @@
                     {
                         method: 'POST',
                         success: function (data) {
-                            MAIN.set('books', data['books']);
+                            MAIN.set('books', data);
                         }
                     }
             );
         }
+
+        MAIN.on("buy_edit", function (e) {
+            MAIN.set('book_meta', {'Title': $(e.node).data("title"), 'Year': $(e.node).data("year"),
+            'Authors': $(e.node).data("authors"), 'ISBN-13': $(e.node).data("isbn"), 'Publisher': $(e.node).data("pub")});
+            MAIN.set('book_cover', [$(e.node).data("cover")]);
+            MAIN.set('book_desc', $(e.node).data("desc"));
+            MAIN.set('buy_sell', true);
+        });
 
         // We want to create a new board
         MAIN.on("lookup", function () {
@@ -239,6 +331,7 @@
             // if ISBN provided do lookup,
             if (isbn != '') {
                 MAIN.set('looking', true);
+                load_isbn(isbn);
                 MAIN.set('isbn_search', true);
             } else if (search != '') {
                 MAIN.set('looking', true);
@@ -277,20 +370,39 @@
             book_add(meta, price, cond, cover, desc);
         });
 
-        MAIN.on("validate-price", function () {
+          MAIN.on("owner-delete", function (e) {
+            var id = $(e.node).data("id");
+            book_delete(id);
+        });
+
+        MAIN.on("validate-price", function (e) {
             if (MAIN.get('book_price') > '0') {
                 MAIN.set('valid_price', true);
                 $("#price").addClass("has-success");
-                valid_submit()
-            }else {
+                valid_submit();
+            }else if ($(e.node).data("price") > '0'){
+                MAIN.set('valid_price', true);
+                $("#price").addClass("has-success");
+                MAIN.set('book_price', $(e.node).data("price"));
+                valid_submit();
+            } else{
                 MAIN.set('valid_price', false);
                 $("#price").addClass("has-error");
+                //MAIN.set('book_price', $(e.node).data("price"));
+//                if (MAIN.get('book_price') > '0' ) {
+//                    MAIN.set('valid_price', true);
+//                    $("#price").addClass("has-success");
+//                    valid_submit();
+//                }else {
+//                    MAIN.set('valid_price', false);
+//                    $("#price").addClass("has-error");
+//                }
             }
         });
 
         MAIN.on("validate-cond", function (e) {
             var cond = $(e.node).data("cond");
-            if (cond > 0) {
+            if (cond > '0') {
                 MAIN.set('valid_cond', true);
                 MAIN.set('book_cond', cond);
                 valid_submit()
@@ -298,6 +410,16 @@
                 MAIN.set('valid_cond', false);
             }
         });
+
+        MAIN.on("contact-seller", function (e) {
+            var user = $(e.node).data("user_id");
+            var isbn = $(e.node).data("isbn");
+            var price = $(e.node).data("price");
+            var cond = $(e.node).data("cond");
+            contact_seller(user, isbn, cond, price);
+        });
+
+
 
         function valid_submit() {
             if (MAIN.get('valid_price') && MAIN.get('valid_cond')) {
@@ -341,7 +463,7 @@
             } else if ($("#cond").hasClass("has-error")) {
                 $("#cond").removeClass("has-error");
             }
-            
+
             MAIN.set('isbn', '');
             MAIN.set('search', '');
 
@@ -361,6 +483,8 @@
             MAIN.set('book_cond', 0);
             MAIN.set('title_search', false);
             MAIN.set('search_results', []);
+            MAIN.set('books', []);
+            MAIN.set('book_cover', []);
         }
 
         function load_isbn(isbn) {
@@ -392,16 +516,43 @@
                 },
                 type: 'POST',
                 success: function (data) {
-                    load_books()
-//                    $("#search").addClass("has-success");
-//                    MAIN.set('book_cover', data['cover']);
-//                    MAIN.set('book_meta', data['meta']);
-//                    MAIN.set('search_done', true);
-//                    MAIN.set('looking', false);
+                    reset_meta()
+                    load_books();
                 }
             });
         }
 
+        function contact_seller(user_id, isbn, cond, price) {
+            $.ajax({
+                url: "{{=URL('default', 'contact_seller', user_signature=True)}}",
+                data: {
+                    user_id: user_id,
+                    isbn: isbn,
+                    cond: cond,
+                    price: price
+                },
+                type: 'POST',
+                success: function () {
+                    //disable button?
+                    $("#contact_seller").prop('disabled', true);
+                }
+            });
+        }
+
+
+        function book_delete(id) {
+            $.ajax({
+                url: "{{=URL('default', 'book_delete', user_signature=True)}}",
+                data: {
+                    id: id
+                },
+                type: 'POST',
+                success: function (data) {
+                    reset_meta()
+                    load_books();
+                }
+            });
+        }
 
         function load_search(search) {
             $.ajax({
@@ -413,6 +564,7 @@
                 success: function (data) {
                     $("#search").addClass("has-success");
                      MAIN.set('search_results', data);
+
 
 //                    MAIN.set('book_cover', data['cover']);
 //                    MAIN.set('book_meta', data['meta']);
@@ -441,8 +593,9 @@
                 }
             });
         }
+        load_books();
+        setInterval(load_books, 1000);
     });
-
 
 </script>
 

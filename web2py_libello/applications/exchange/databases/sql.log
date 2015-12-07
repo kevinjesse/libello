@@ -171,3 +171,105 @@ CREATE TABLE books(
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
 );
 success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-04T17:40:59.746719
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-04T22:51:55.689531
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-05T01:43:27.011377
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-05T02:14:17.886803
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-05T02:15:29.454523
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-06T07:01:52.946989
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
