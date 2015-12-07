@@ -1,0 +1,267 @@
+{{extend 'layout.html'}}
+<div class="page-header note">
+    <h1>
+      <center>
+        Welcome to The Best Bulletin Board in the World!
+      </center>
+      <small>
+        <center>
+          Post to your heart's content!
+        </center>
+      </small>
+    </h1>
+</div>
+
+<ul class="nav nav-pills note">
+
+
+</ul>
+
+
+
+
+<div id="target"></div>
+
+<script id="posts" type="text/ractive">
+{{=A('Home', _class='btn btn-info', _href=URL('default', 'index'))}}
+{{if auth.user_id is not None:}}
+    <button class="btn btn-primary" on-click="new"> New Post</button>
+{{pass}}
+
+<div class="post_list">
+  {% #post_dict:post %}
+      <div class="post">
+
+        <div class="mylist2 sticky clearfix">
+            <tr><td>
+            </td></tr>
+            <center>
+              <b>
+                <font size="6">
+                   <span class="boardtitle note3">
+                    {% #if editing_name && post == post_id %}
+                          <textarea id="editarea" on-blur="editdone" data-post_id="{% post %}"
+                          data-post_name = "{% post_name %}" value="{% post_name %}">
+                          </textarea>
+                      {% else %}
+                        {% #if author == "{{=auth.user_id}}" %}
+                            <div on-click="startedit" data-post_id="{% post %}">{% post_name %}</div>
+                        {% else %}
+                            {% post_name %}
+                        {% /if %}
+                      {% /if %}
+
+                      {% #if editing_content && post == post_id %}
+                          <textarea id="editarea1" on-blur="editdone1" data-post_id="{% post %}"
+                          data-post_content = "{% post_content %}" value="{% post_content %}">
+                          </textarea>
+                      {% else %}
+                        {% #if author == "{{=auth.user_id}}" %}
+                            <div on-click="startedit1" data-post_id="{% post %}">{% post_content %}</div>
+                        {% else %}
+                            {% post_content %}
+                        {% /if %}
+                      {% /if %}
+                   </span>
+                </font>
+              </b>
+            </center>
+            <ul class="nav nav-pills" role="tablist">
+                <li role="presentation" class="active">
+                    {% #if author == "{{=auth.user_id}}" %}
+                         <button style="float:left; "class="btn btn-danger" on-click="delete" data-post_id = "{% post %}"><i class="fa fa-trash"></i></button>
+                    {% /if %}
+                </li>
+            </ul>
+        </div>
+      </div>
+  {% /post_dict %}
+</div>
+
+{% #if loading %}
+  <div id="load_spinner">
+    <i class="fa fa-spinner fa-pulse fa-4x"></i>
+  </div>
+{% /if %}
+
+</script>
+
+<script>
+    $(function () {
+        // Ractive object
+        var MAIN = new Ractive({
+            el: '#target',
+            template: '#posts',
+            delimiters: ['{%', '%}'],
+            tripleDelimiters: ['{%%', '%%}'],
+            data: {
+                post_dict: {},
+                post_id: "{{=post_id}}",
+                board_id: "{{=board_id}}",
+                post_content: "",
+                post_description: "",
+                post_author: "{{=auth.user_id}}",
+                loading: true,
+                editing_name: false,
+                editing_content:false
+            }
+        });
+
+
+
+
+        MAIN.on("startedit", function (e) {
+            MAIN.set("editing_name", true);
+            clearInterval(refresh);
+            MAIN.set("post_id", $(e.node).data("post_id"));
+            $("#editarea").focus();
+        });
+
+        MAIN.on("startedit1", function (e) {
+            MAIN.set("editing_content", true);
+            clearInterval(refresh);
+            MAIN.set("post_id", $(e.node).data("post_id"));
+            $("#editarea1").focus();
+        });
+
+        MAIN.on("editdone", function (e) {
+            MAIN.set("editing_name", false);
+            refresh = setInterval(load_posts, 10000);
+            var post_id = $(e.node).data("post_id");
+            var post_name = $(e.node).data("post_name");
+            edit_post_name(post_id, post_name);
+
+        });
+
+        MAIN.on("editdone1", function (e) {
+            MAIN.set("editing_content", false);
+            refresh = setInterval(load_posts, 10000);
+            var post_id = $(e.node).data("post_id");
+            var post_content = $(e.node).data("post_content");
+            edit_post_content(post_id, post_content);
+        });
+
+        function edit_post_name(post_id, post_name) {
+            $.ajax("{{=URL('default', 'edit_post_name', user_signature=True)}}",
+                    {
+                        data: {
+                            post_id: post_id,
+                            post_name: post_name
+                        },
+                        method: 'POST',
+                        success: function () {
+                            load_posts();
+                        },
+                        error: function () {
+                        }
+                    }
+            );
+        }
+
+        function edit_post_content(post_id, post_content) {
+            $.ajax("{{=URL('default', 'edit_post_content', user_signature=True)}}",
+                    {
+                        data: {
+                            post_id: post_id,
+                            post_content: post_content
+                        },
+                        method: 'POST',
+                        success: function () {
+                            load_posts();
+                        },
+                        error: function () {
+                        }
+                    }
+            );
+        }
+
+        function load_posts() {
+            var board_id = MAIN.get('board_id');
+            $.ajax("{{=URL('default', 'load_posts', user_signature=True)}}",
+                    {
+                        data: {
+                          board_id: board_id
+                        },
+                        method: 'POST',
+                        success: function (data) {
+                            MAIN.set('post_dict', data['post_dict']);
+                            MAIN.set('loading', false);
+                        }
+                    }
+            );
+        }
+
+
+        function add_post(post_name, post_content) {
+            var call_post_id = MAIN.get('post_id');
+            $.ajax("{{=URL('default', 'add_post', user_signature=True)}}",
+                    {
+                        data: {
+                            post_name: post_name,
+                            post_id: call_post_id,
+                            post_content: post_content,
+                            board_id: MAIN.get('board_id')
+                        },
+                        method: 'POST',
+                        success: function () {
+                            load_posts();
+                        },
+                        error: function () {
+                        }
+                    }
+            );
+        }
+
+        function delete_post(post_id) {
+            $.ajax("{{=URL('default', 'delete_post', user_signature=True)}}",
+                    {
+                        data: {
+                            post_id: post_id
+                        },
+                        method: 'POST',
+                        success: function () {
+                            load_posts();
+                        },
+                        error: function () {
+                        }
+                    }
+            );
+        }
+
+
+        function generateUUID() {
+            var d = new Date().getTime();
+            if (window.performance && typeof window.performance.now === "function") {
+                d += performance.now();
+                ; //use high-precision timer if available
+            }
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            return uuid;
+        }
+
+                // Listens to click on Edit buttons for drafts.
+        MAIN.on("delete", function (e) {
+            var post_id = $(e.node).data("post_id");
+            delete_post(post_id);
+        });
+
+
+
+                // We want to create a new draft.
+        MAIN.on("new", function (e) {
+            // First, we send to the server the current draft, to avoid losing it.
+            MAIN.set('post_id', generateUUID());
+            MAIN.set('post_name', 'Write Here');
+            MAIN.set('post_content', 'Write Content Here');
+            add_post(MAIN.get('post_name'), MAIN.get('post_content'));
+        });
+
+        load_posts();
+        var refresh = setInterval(load_posts, 10000);
+    })
+    ;
+</script>

@@ -1,0 +1,9 @@
+/* line 2, ../sass/_main.scss */
+body {
+  background-image: url("http://i.imgur.com/cr0XH8l.jpg");
+}
+
+/* line 6, ../sass/_main.scss */
+.trans {
+  background-color: rgba(245, 245, 245, 0.6);
+}
