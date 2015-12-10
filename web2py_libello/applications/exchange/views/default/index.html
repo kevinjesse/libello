@@ -331,7 +331,7 @@
             // if ISBN provided do lookup,
             if (isbn != '') {
                 MAIN.set('looking', true);
-                load_isbn(isbn);
+                verify_isbn(isbn);
                 MAIN.set('isbn_search', true);
             } else if (search != '') {
                 MAIN.set('looking', true);
@@ -598,7 +598,6 @@
     });
 
 </script>
-
 
 
 

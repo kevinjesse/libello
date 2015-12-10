@@ -21,7 +21,7 @@ def reset_table():
     db.books.drop()
 
 # def reset_book():
-#     db(db.books.isbn ==  '9781408834985').delete()
+#     db(db.books.isbn ==  '9781458779878').delete()
 
 @auth.requires_signature()
 def info_isbn():
