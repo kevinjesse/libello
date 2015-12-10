@@ -1,0 +1,275 @@
+timestamp: 2015-11-25T16:35:31.490000
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2015-11-25T16:35:31.510000
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2015-11-25T16:35:31.529000
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2015-11-25T16:35:31.549000
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2015-11-25T16:35:31.571000
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2015-11-25T16:35:31.589000
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2015-11-25T17:14:32.764000
+CREATE TABLE boards(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    board_name TEXT,
+    board_id CHAR(512),
+    author INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2015-11-25T17:14:32.793000
+CREATE TABLE posts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    post_name TEXT,
+    post_content TEXT,
+    board_id CHAR(512),
+    post_id CHAR(512),
+    author INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE boards;
+success!
+DROP TABLE posts;
+success!
+timestamp: 2015-11-25T21:18:36.491000
+CREATE TABLE boards(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    board_name TEXT,
+    board_id CHAR(512),
+    author INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2015-11-25T21:18:36.512000
+CREATE TABLE posts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    post_name TEXT,
+    post_content TEXT,
+    board_id CHAR(512),
+    post_id CHAR(512),
+    author INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2015-12-03T01:53:49.600991
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    isbn TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2015-12-03T01:59:27.011404
+ALTER TABLE books ADD publisher TEXT;
+timestamp: 2015-12-03T01:59:27.016884
+ALTER TABLE books ADD price TEXT;
+timestamp: 2015-12-03T01:59:27.020072
+ALTER TABLE books ADD year_pub TEXT;
+timestamp: 2015-12-03T01:59:27.023132
+ALTER TABLE books ADD cond INTEGER;
+timestamp: 2015-12-03T01:59:27.026287
+ALTER TABLE books ADD authors TEXT;
+success!
+timestamp: 2015-12-03T10:26:04.727110
+ALTER TABLE books ADD cover TEXT;
+success!
+timestamp: 2015-12-03T21:06:19.257328
+ALTER TABLE books ADD descript TEXT;
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-03T21:06:56.954543
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-03T21:21:22.475549
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+success!
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-03T23:55:08.231110
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-04T17:40:59.746719
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-04T22:51:55.689531
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-05T01:43:27.011377
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-05T02:14:17.886803
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-05T02:15:29.454523
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+DROP TABLE books;
+success!
+timestamp: 2015-12-06T07:01:52.946989
+CREATE TABLE books(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    authors TEXT,
+    year_pub TEXT,
+    isbn TEXT,
+    publisher TEXT,
+    price TEXT,
+    cond INTEGER,
+    cover TEXT,
+    descript TEXT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!

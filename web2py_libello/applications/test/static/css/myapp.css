@@ -1,0 +1,269 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+/* line 1, ../sass/_main.scss */
+.trans {
+  background-color: rgba(245, 245, 245, 0.6);
+}
+
+/* line 5, ../sass/_main.scss */
+.trans {
+  height: 35em;
+  padding-top: 9em;
+  margin-bottom: 2em;
+  background-image: url("../images/mchenry3.png");
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 15, ../sass/_main.scss */
+.navbar-default {
+  position: absolute;
+  background-color: transparent;
+}
+
+/* line 20, ../sass/_main.scss */
+.navbar-default .navbar-brand {
+  font-size: 15px;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* line 26, ../sass/_main.scss */
+.dl-horizontal dt {
+  text-align: left;
+  width: auto;
+  padding-right: 1em;
+}
+
+/* line 32, ../sass/_main.scss */
+.dl-horizontal dd {
+  margin-left: 30px;
+}
+
+/* line 36, ../sass/_main.scss */
+#wrapper div {
+  display: table-cell;
+  height: 100px;
+}
+
+/* line 41, ../sass/_main.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 47, ../sass/_main.scss */
+body {
+  background-color: transparent;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+}
+
+/* line 54, ../sass/_main.scss */
+input {
+  color: #666666;
+}
+
+/* line 58, ../sass/_main.scss */
+.form-control {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset 0 -1px 0 #ddd;
+  box-shadow: inset 0 -1px 0 #ddd;
+  font-size: 16px;
+  color: "white";
+}
+
+/* line 60, ../sass/_main.scss */
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  margin: 0 0 20px;
+  text-align: center;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #bbb;
+}
+
+/* line 68, ../sass/_main.scss */
+hr {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
+  margin: 25px 0;
+  clear: both;
+}
+
+/* line 74, ../sass/_main.scss */
+.centered {
+  text-align: center;
+}
+
+/* line 77, ../sass/_main.scss */
+.wrapper {
+  width: 100%;
+  padding: 30px 0;
+}
+
+/* line 81, ../sass/_main.scss */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 85, ../sass/_main.scss */
+ul.grid-nav {
+  list-style: none;
+  font-size: .85em;
+  font-weight: 200;
+  text-align: center;
+}
+
+/* line 91, ../sass/_main.scss */
+ul.grid-nav li {
+  display: inline-block;
+}
+
+/* line 94, ../sass/_main.scss */
+ul.grid-nav li a {
+  display: inline-block;
+  background: #999;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+/* line 104, ../sass/_main.scss */
+ul.grid-nav li a:hover {
+  background: #7b0;
+}
+
+/* line 107, ../sass/_main.scss */
+ul.grid-nav li a.active {
+  background: #333;
+}
+
+/* line 110, ../sass/_main.scss */
+.grid-container {
+  display: none;
+}
+
+/* ----- Image grids ----- */
+/* line 114, ../sass/_main.scss */
+ul.rig {
+  list-style: none;
+  font-size: 0px;
+  margin-left: -2.5%;
+  /* should match li left margin */
+}
+
+/* line 119, ../sass/_main.scss */
+ul.rig li {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 0 2.5% 2.5%;
+  background: transparent;
+  border: transparent;
+  font-size: 16px;
+  font-size: 1rem;
+  vertical-align: top;
+  box-shadow: transparent;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* line 133, ../sass/_main.scss */
+ul.rig li img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 10px;
+}
+
+/* line 138, ../sass/_main.scss */
+ul.rig li h3 {
+  margin: 0 0 5px;
+}
+
+/* line 141, ../sass/_main.scss */
+ul.rig li p {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+/* class for 2 columns */
+/* line 146, ../sass/_main.scss */
+ul.rig.columns-2 li {
+  width: 47.5%;
+  /* this value + 2.5 should = 50% */
+}
+
+/* class for 3 columns */
+/* line 150, ../sass/_main.scss */
+ul.rig.columns-3 li {
+  width: 30.83%;
+  /* this value + 2.5 should = 33% */
+}
+
+/* class for 4 columns */
+/* line 154, ../sass/_main.scss */
+ul.rig.columns-4 li {
+  width: 22.5%;
+  /* this value + 2.5 should = 25% */
+}
+
+@media (max-width: 1199px) {
+  /* line 159, ../sass/_main.scss */
+  .container {
+    width: auto;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 166, ../sass/_main.scss */
+  ul.grid-nav li {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  /* line 170, ../sass/_main.scss */
+  ul.grid-nav li a {
+    display: block;
+  }
+
+  /* line 173, ../sass/_main.scss */
+  ul.rig {
+    margin-left: 0;
+  }
+
+  /* line 176, ../sass/_main.scss */
+  ul.rig li {
+    width: 100% !important;
+    /* over-ride all li styles */
+    margin: 0 0 20px;
+  }
+}
+/* line 15, ../sass/myapp.scss */
+#wrapper {
+  margin-right: 200px;
+}
+
+/* line 18, ../sass/myapp.scss */
+#content {
+  float: left;
+  width: 100%;
+}
+
+/* line 22, ../sass/myapp.scss */
+#sidebar {
+  float: right;
+  width: 200px;
+  margin-right: -200px;
+}
+
+/* line 27, ../sass/myapp.scss */
+#cleared {
+  clear: both;
+}

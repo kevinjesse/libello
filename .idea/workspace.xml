@@ -2,20 +2,82 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f31bd525-4a98-4480-9442-a69dc0ea690d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/images/mchenry3.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/posts.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/databases/storage.sqlite" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/databases/storage.sqlite" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/sessions/0e1/023/127.0.0.1-fef69278-f7b6-415e-96c8-bdb011a788ad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/sessions/147/100/127.0.0.1-939e4e68-7339-46ce-83df-67f283f2fb90" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/sessions/177/0ec/127.0.0.1-ebc77704-9eba-4372-b8d9-fe467a2979ba" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/sessions/17a/01c/127.0.0.1-8aa3a77a-1fb2-4964-9173-6bc8dd0c41e4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/sessions/1a1/1ba/127.0.0.1-d8532876-2ca5-4ccd-a907-0baf280ac502" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/0fe24dfc41fffed2d6891c797fcd7dee100afa65/_clearfix.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/0fe24dfc41fffed2d6891c797fcd7dee100afa65/_float.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/0fe24dfc41fffed2d6891c797fcd7dee100afa65/_hacks.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/0fe24dfc41fffed2d6891c797fcd7dee100afa65/_min.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/0fe24dfc41fffed2d6891c797fcd7dee100afa65/_reset.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/0fe24dfc41fffed2d6891c797fcd7dee100afa65/_tag-cloud.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_animation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_appearance.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_background-clip.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_background-origin.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_background-size.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_border-radius.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_box-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_box-sizing.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_deprecated-support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_filter.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_flexbox.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_font-face.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_hyphenation.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_images.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_inline-block.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_opacity.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_regions.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_text-shadow.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_transform.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_transition.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/17d03613c125918cd0766f51918feb21dc3c074a/_user-interface.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/3dc42df00806de7d8a69305a38a55c4890752fa3/_color.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/3dc42df00806de7d8a69305a38a55c4890752fa3/_general.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/3dc42df00806de7d8a69305a38a55c4890752fa3/_sprites.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/3dc42df00806de7d8a69305a38a55c4890752fa3/_tables.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/573835d864b4df5ce94e4258e1e431786e6d4972/_links.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/573835d864b4df5ce94e4258e1e431786e6d4972/_lists.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/573835d864b4df5ce94e4258e1e431786e6d4972/_text.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/573835d864b4df5ce94e4258e1e431786e6d4972/_units.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/573835d864b4df5ce94e4258e1e431786e6d4972/_vertical_rhythm.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/5a462c574cc9d6048b27e284d2bee463ad06adb0/_base.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/5a462c574cc9d6048b27e284d2bee463ad06adb0/_sprite-img.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/5c1730f32298ffd91557b8d52e7146c95c422f95/_compass.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/622f0a367d2abdc892f2af88934fcd5a48a771fe/_brightness.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/622f0a367d2abdc892f2af88934fcd5a48a771fe/_contrast.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/65e4c30c131f260ea88c3e4f2e16dfc2ba547e74/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/6ecb5984e567c86d36d8e6b00266e80f1a28aac7/_constants.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/6ecb5984e567c86d36d8e6b00266e80f1a28aac7/_main.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/6ecb5984e567c86d36d8e6b00266e80f1a28aac7/myapp.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/782a0bd87992107041654cec56e572d9555410d7/_grid-background.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/98a7ed5264178fbd0870c9038118ca3f0a0ab596/_alternating-rows-and-columns.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/98a7ed5264178fbd0870c9038118ca3f0a0ab596/_borders.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/98a7ed5264178fbd0870c9038118ca3f0a0ab596/_scaffolding.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/af1a5722249b61fe97c5776f7a26e0902a00f406/_css3.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/af1a5722249b61fe97c5776f7a26e0902a00f406/_support.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/af1a5722249b61fe97c5776f7a26e0902a00f406/_typography.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/af1a5722249b61fe97c5776f7a26e0902a00f406/_utilities.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/bbe6e3467eb0788de7c874201395cdc9422f15de/_ellipsis.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/bbe6e3467eb0788de7c874201395cdc9422f15de/_force-wrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/bbe6e3467eb0788de7c874201395cdc9422f15de/_nowrap.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/bbe6e3467eb0788de7c874201395cdc9422f15de/_replacement.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/cd57c9b0980d0f25e92ee54d3ee2a16b903b7e86/_bullets.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/cd57c9b0980d0f25e92ee54d3ee2a16b903b7e86/_horizontal-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/cd57c9b0980d0f25e92ee54d3ee2a16b903b7e86/_inline-block-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/cd57c9b0980d0f25e92ee54d3ee2a16b903b7e86/_inline-list.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/f80149e2d24d84e9c8bc0e2a066a9d62bc1f6d5b/_hover-link.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/f80149e2d24d84e9c8bc0e2a066a9d62bc1f6d5b/_link-colors.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/.sass-cache/f80149e2d24d84e9c8bc0e2a066a9d62bc1f6d5b/_unstyled-link.scssc" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/httpserver.log" afterPath="$PROJECT_DIR$/web2py_libello/httpserver.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/httpserver.pid" afterPath="$PROJECT_DIR$/web2py_libello/httpserver.pid" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/index.html" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/layout.html" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/welcome/views/layout.html" afterPath="$PROJECT_DIR$/web2py_libello/applications/welcome/views/layout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/myapp.css" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/myapp.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/parameters_8001.py" afterPath="$PROJECT_DIR$/web2py_libello/parameters_8001.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/user.html" afterPath="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web2py_libello/.idea/workspace.xml" afterPath="$PROJECT_DIR$/web2py_libello/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="libello.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,102 +101,7 @@
     <favorites_list name="libello" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2796486" vertical-offset="14764" max-vertical-offset="16305">
-              <caret line="10" column="129482" selection-start-line="10" selection-start-column="129482" selection-end-line="10" selection-end-column="129482" />
-              <folding>
-                <element signature="e#132034#132309#2" expanded="true" />
-                <element signature="e#132843#133118#2" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.705882" vertical-offset="360" max-vertical-offset="2835">
-              <caret line="57" column="177" selection-start-line="57" selection-start-column="177" selection-end-line="57" selection-end-column="177" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/layout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="857" max-vertical-offset="1980">
-              <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/controllers/default.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="3330">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mchenry3.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/images/mchenry3.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myapp.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/myapp.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="4125">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding>
-                <marker date="1449743198000" expanded="true" signature="1093:1150" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625" vertical-offset="3345" max-vertical-offset="9150">
-              <caret line="232" column="36" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="218" max-vertical-offset="810">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web2py.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web2py_libello/applications/admin/static/css/web2py.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="4920">
-              <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-              <folding>
-                <marker date="1439972172000" expanded="true" signature="3489:3526" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,8 +113,8 @@
         <option value="$PROJECT_DIR$/web2py_libello/applications/exchange/views/layout.html" />
         <option value="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/index.html" />
         <option value="$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/user.html" />
-        <option value="$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss" />
         <option value="$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss" />
       </list>
     </option>
   </component>
@@ -219,196 +186,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web2py_libello" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="applications" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exchange" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -634,12 +411,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="833" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -679,24 +456,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/web2py.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4785">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1447583658000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap-theme.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="710">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/web2py-bootstrap3.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4860">
@@ -713,30 +472,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="857" max-vertical-offset="1980">
-          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web2py_libello/applications/admin/static/css/web2py.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1375" max-vertical-offset="4920">
           <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
           <folding>
-            <marker date="1439972172000" expanded="true" signature="3489:3526" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/myapp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="4125">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <marker date="1449743198000" expanded="true" signature="1093:1150" placeholder="{...}" />
+            <marker date="1439972172000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -762,31 +503,141 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="3345" max-vertical-offset="9150">
-          <caret line="232" column="36" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.705882" vertical-offset="360" max-vertical-offset="2835">
-          <caret line="57" column="177" selection-start-line="57" selection-start-column="177" selection-end-line="57" selection-end-column="177" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2796486" vertical-offset="14764" max-vertical-offset="16305">
+        <state vertical-scroll-proportion="541.2593" vertical-offset="14764" max-vertical-offset="16305">
           <caret line="10" column="129482" selection-start-line="10" selection-start-column="129482" selection-end-line="10" selection-end-column="129482" />
           <folding>
             <element signature="e#132034#132309#2" expanded="true" />
             <element signature="e#132843#133118#2" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="857" max-vertical-offset="1980">
+          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/myapp.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8775511" vertical-offset="92" max-vertical-offset="510">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/myapp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3870">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/web2py.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4785">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1447583658000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/views/default/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="9150">
+          <caret line="6" column="72" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/images/background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/css/bootstrap-theme.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="32.925926" vertical-offset="949" max-vertical-offset="2700">
+          <caret line="4" column="9099" selection-start-line="4" selection-start-column="9096" selection-end-line="4" selection-end-column="9099" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="467">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/applications/exchange/static/sass/_main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8235295" vertical-offset="0" max-vertical-offset="2730">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9781887902991.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9781784395957.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9781449355692.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9781449330729.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9781449323615.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9781430224167.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9780672329784.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9780596555719.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9780553213119.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9780134034409.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web2py_libello/9780133124347.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
