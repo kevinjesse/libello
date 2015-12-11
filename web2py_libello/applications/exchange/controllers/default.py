@@ -161,12 +161,30 @@ def book_add():
     cond = request.vars['cond']
     cover = ''.join(request.vars['cover[]'])
     desc = request.vars['desc']
-    # db.books.update_or_insert(((db.books.isbn == isbn) & (db.books.user_id == auth.user_id)),title=title,
-    #                           authors=authors, year_pub=year, isbn=isbn, publisher=pub, price=price, cond=cond,
-    #                           cover=cover, descript=desc, user_id=auth.user_id)
-    db.books.insert(title=title, authors=authors, year_pub=year, isbn=isbn, publisher=pub, price=price, cond=cond,
-                               cover=cover, descript=desc, user_id=auth.user_id)
+    db.books.update_or_insert(((db.books.isbn == isbn) & (db.books.user_id == auth.user_id)),title=title,
+                              authors=authors, year_pub=year, isbn=isbn, publisher=pub, price=price, cond=cond,
+                              cover=cover, descript=desc, user_id=auth.user_id)
+    # db.books.insert(title=title, authors=authors, year_pub=year, isbn=isbn, publisher=pub, price=price, cond=cond,
+    #                            cover=cover, descript=desc, user_id=auth.user_id)
     return "ok"
+
+# def book_update():
+#     ident = request.vars['id']
+#     title = request.vars['meta[Title]']
+#     authors = request.vars['meta[Authors]']
+#     year = request.vars['meta[Year]']
+#     isbn = request.vars['meta[ISBN-13]']
+#     pub = request.vars['meta[Publisher]']
+#     price = request.vars['price']
+#     cond = request.vars['cond']
+#     cover = ''.join(request.vars['cover[]'])
+#     desc = request.vars['desc']
+#     db.books.update_or_insert((db.books.id == ident),title=title,
+#                               authors=authors, year_pub=year, isbn=isbn, publisher=pub, price=price, cond=cond,
+#                               cover=cover, descript=desc, user_id=auth.user_id)
+#     # db.books.insert(title=title, authors=authors, year_pub=year, isbn=isbn, publisher=pub, price=price, cond=cond,
+#     #                            cover=cover, descript=desc, user_id=auth.user_id)
+#     return "ok"
 
 @auth.requires_signature()
 def book_delete():

@@ -244,7 +244,9 @@
                                   <button type="button" class="btn btn-default" on-click="validate-cond" data-cond="1">Acceptable</button>
                                 </div>
                             </div><br>
-                            <button id="post_book" type="submit" class="btn btn-success" on-click="owner-submit" data-dismiss="modal" disabled>
+                            <button id="post_book" type="submit" class="btn btn-success" on-click="owner-submit" data-id="{%id%}" data-title="{%title%}"
+                            data-authors="{%authors%}" data-year="{%year_pub%}" data-isbn="{%isbn%}" data-pub="{%publisher%}"
+                            data-cover="{%cover%}" data-desc="{%desc%}" data-dismiss="modal" disabled>
                             <i class="fa fa-book"></i> Repost Book!</button>
                             <button id="delete_book" type="delete" class="btn btn-danger" on-click="owner-delete" data-id="{%id%}" data-dismiss="modal">
                             <i class="fa fa-trash-o"></i> Delete Book!</button>
@@ -369,6 +371,20 @@
             var desc = MAIN.get('book_desc');
             book_add(meta, price, cond, cover, desc);
         });
+
+//        MAIN.on("owner-edit", function (e) {
+//            var id = $(e.node).data("id");
+//            MAIN.set('book_meta', {'Title': $(e.node).data("title"), 'Year': $(e.node).data("year"),
+//            'Authors': $(e.node).data("authors"), 'ISBN-13': $(e.node).data("isbn"), 'Publisher': $(e.node).data("pub")});
+//            MAIN.set('book_cover', [$(e.node).data("cover")]);
+//            MAIN.set('book_desc', $(e.node).data("desc"));
+//            var meta = MAIN.get('book_meta');
+//            var price = MAIN.get('book_price');
+//            var cond = MAIN.get('book_cond');
+//            var cover = MAIN.get('book_cover');
+//            var desc = MAIN.get('book_desc');
+//            book_update(id, meta, price, cond, cover, desc);
+//        });
 
           MAIN.on("owner-delete", function (e) {
             var id = $(e.node).data("id");
@@ -516,7 +532,26 @@
                 },
                 type: 'POST',
                 success: function (data) {
-                    reset_meta()
+                    reset_meta();
+                    load_books();
+                }
+            });
+        }
+
+        function book_update(id, meta, price, cond, cover, desc) {
+            $.ajax({
+                url: "{{=URL('default', 'book_update', user_signature=True)}}",
+                data: {
+                    id: id,
+                    meta: meta,
+                    price:price,
+                    cond:cond,
+                    cover:cover,
+                    desc:desc
+                },
+                type: 'POST',
+                success: function (data) {
+                    reset_meta();
                     load_books();
                 }
             });
@@ -594,7 +629,7 @@
             });
         }
         load_books();
-        setInterval(load_books, 1000);
+        setInterval(load_books, 10000);
     });
 
 </script>
